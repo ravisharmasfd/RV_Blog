@@ -3,8 +3,8 @@ import React from "react";
 
 function PageFooter() {
   return (
-    <footer className="border-t-4 border-solid border-white absolute bottom-0 right-0 w-full py-4">
-      <div className="flex flex-col md:flex-row justify-between px-4 items-center">
+    <footer className="border-t-4 border-solid border-white relative bottom-0 left-0 w-full bg-primary">
+      <div className="flex flex-col md:flex-row justify-between items-center mt-4">
         <span className="text-white hover:text-third text-center">
           © Copyright 2022 by RV Blog. Built with 
           <b className="text-pink-500 text-2xl m-1">♥</b> by Ravi Sharma.

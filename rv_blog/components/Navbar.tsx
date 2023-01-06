@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 function Navbar() {
   return (
-    <nav className="top-0 sticky">
+    <nav className="top-0 sticky w-full">
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center gap-1">
           <svg
