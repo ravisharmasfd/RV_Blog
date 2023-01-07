@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav className="top-0 sticky w-full">
       <div className="flex flex-row items-center justify-between">
-        <div className="flex flex-row items-center gap-1">
+        <Link href='/' className="flex flex-row items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -19,7 +19,7 @@ function Navbar() {
             />
           </svg>
           <span className="text-white font-bold">RV BLOG</span>
-        </div>
+        </Link>
         <div className="hidden md:flex flex-row items-center justify-center gap-4 text-white">
           <Link className="hover:text-third" href="/">
             Blog

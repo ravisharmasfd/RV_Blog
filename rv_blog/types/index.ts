@@ -8,13 +8,16 @@ export interface ICategoriesProps {
   }
   export interface IArticlesProps {
     articles: Array<IArticle>;
+    category:string
   }
 
 export interface IIndexPageProps {
   categories: Array<ICategory>;
   articles: Array<IArticle>;
 }
-
+export interface IAuthorProps{
+  author : IAuthor;
+}
 export interface IAuthor {
   id: string;
   name: string;
@@ -37,4 +40,7 @@ export interface IArticle {
   content: {
     html: string;
   };
+}
+export interface IPostProps {
+  article : IArticle;
 }

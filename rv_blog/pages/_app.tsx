@@ -6,7 +6,7 @@ import PageFooter from '../components/PageFooter'
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <div className=" py-4 px-4  md: md:px-12 w-full min-h-screen">
+  return <div className=" py-4 px-4  md: md:px-12 w-screen min-h-screen">
     <Navbar/>
     <Component {...pageProps} />
     <PageFooter/>
