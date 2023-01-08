@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { NextPage ,GetServerSideProps } from 'next'
-import {getArticles, getCategories} from '../dataFetch/index'
+import {getArticles, getCategories} from '../BackendApi/index'
 import { IArticle, IAuthor, ICategory,IIndexPageProps } from '../types'
 import NavBottom from '../components/NavBottom'
 import Posts from '../components/Posts'
@@ -16,7 +16,7 @@ export default function Home({categories,articles}:IIndexPageProps){
       </Head>
       <main className='min-h-[70vh]' >
         <NavBottom categories={categories}/>
-       <Posts articles={articles} category='recent'/>
+       <Posts articles={articles}/>
       </main>
     </>
   )

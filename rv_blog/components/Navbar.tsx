@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import SearchBar from "./SearchBar";
+import Accordian from "./Accordian";
 function Navbar() {
+  const [mobileMenu,setMobileMenu] = useState<boolean>(false)
   return (
-    <nav className="top-0 sticky w-full">
-      <div className="flex flex-row items-center justify-between">
+    <nav className="top-0 sticky w-full bg-primary z-50 h-12">
+      <div className="flex flex-row items-center justify-between mt-2">
         <Link href='/' className="flex flex-row items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +23,7 @@ function Navbar() {
           </svg>
           <span className="text-white font-bold">RV BLOG</span>
         </Link>
+        <div className="hidden md:block"><SearchBar/></div>
         <div className="hidden md:flex flex-row items-center justify-center gap-4 text-white">
           <Link className="hover:text-third" href="/">
             Blog
@@ -35,6 +39,7 @@ function Navbar() {
           </Link>
         </div>
         <button
+        onClick={()=>setMobileMenu(!mobileMenu)}
           className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         >
           <span className="sr-only">Open main menu</span>
@@ -53,6 +58,23 @@ function Navbar() {
           </svg>
         </button>
         
+      </div>
+      <div className={`flex-col items-center h-[50vh] m-4 rounded-2xl border-white border-solid border-2 justify-center gap-y-4  bg-secondary ${mobileMenu?"flex":"hidden"}`}>
+          <SearchBar/>
+          <div className="flex w-full flex-col items-center justify-center gap-4 text-white text-2xl">
+          <Link className="hover:text-third" href="/">
+            Blog
+          </Link>
+          <Link className="hover:text-third" href="/">
+            GitHub
+          </Link>
+          <Link className="hover:text-third" href="/">
+            Instagram
+          </Link>
+          <Link className="hover:text-third" href="/">
+            Portfolio
+          </Link>
+        </div>
       </div>
     </nav>
   );

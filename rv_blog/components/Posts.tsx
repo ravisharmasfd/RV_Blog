@@ -4,10 +4,9 @@ import Link from "next/link";
 import moment from "moment";
 import { IArticle, IArticlesProps } from "../types";
 
-function Posts({ articles,category }: IArticlesProps) {
+function Posts({ articles }: IArticlesProps) {
   return (
     <div className="flex flex-col md:flex-row w-full h-full gap-4 items-center justify-start mb-10  md:items-start md:justify-evenly flex-wrap">
-      <h3 className="text-third md:hidden font-bold border-l-4 border-solid border-third text-2xl pl-2 mt-4">{category}</h3>
       {articles.map((article: IArticle) => {
         return (
           <Link href={`/post/${article.slug}`}

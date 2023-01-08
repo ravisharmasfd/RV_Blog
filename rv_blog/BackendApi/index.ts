@@ -1,4 +1,5 @@
 import {request, gql } from "graphql-request";
+import { ICommentForm } from "../types";
 
 const api:string = "https://api-ap-south-1.hygraph.com/v2/clacctm8100z901um1r9b2kl5/master";
 
@@ -53,6 +54,7 @@ export const getPost = async(slug:any) =>{
         featuredImage
         id
         title
+        slug
         content {
           html
         }
@@ -119,4 +121,36 @@ export const getArticlesBySearch = async (searchString:string) => {
   const result = await request(api, query,{searchString});
   return result.articles;
 };
+export const submitComment = async (commentForm:ICommentForm) => {
+  try {
+    const result = await fetch('/api/comment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentForm),
+    });
+  
+    return result.json();
+  } catch (error) {
+    console.log("Error while submitting comment");
+  }
+};
+
+
+export const getComments = async (slug:string) => {
+  const query:string = gql`query getComment($slug:String!) {
+    comments(where: {postSlug: $slug}) {
+      postSlug
+      name
+      message
+      id
+    }
+  }
+  
+  `;
+  const result = await request(api, query,{slug});
+  return result.comments;
+};
+
 

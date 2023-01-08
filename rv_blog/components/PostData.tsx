@@ -3,9 +3,8 @@ interface IHtmlDataProps{
     htmlData:string;
 }
 function PostData({htmlData}:IHtmlDataProps) {
-    console.log(htmlData)
   return (
-    <section className='text-white text-left' dangerouslySetInnerHTML={{ __html: htmlData }}></section>
+    <section className='text-white text-left px-4 w-full' dangerouslySetInnerHTML={{ __html: htmlData }}></section>
   )
 }
 

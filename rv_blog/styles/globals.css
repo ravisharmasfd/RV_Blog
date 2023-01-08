@@ -7,9 +7,27 @@
   box-sizing: border-box;
   background-color: #0f172a;
  }
- code{
+ pre{
+  padding: 12px;
+    overflow-x: auto;
+    font-size: small;
+    color: rgb(47, 202, 202);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: rgb(32, 36, 36);
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
  }
- boxShadow{
+ .boxShadow{
    box-shadow: rgba(6, 42, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+ }
+ p{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+ }
+ strong{
+  color: #00FFF6;
  }

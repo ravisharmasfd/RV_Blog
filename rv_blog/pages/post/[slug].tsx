@@ -1,14 +1,17 @@
 import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
 import React from 'react'
-import {getPost} from '../../dataFetch'
-import { IArticle, IPostProps } from '../../types'
+import {getComments, getPost} from '../../BackendApi'
+import { IArticle, ICommentForm, ICommentResult, IPostProps } from '../../types'
 import Image from 'next/image';
 import moment from 'moment';
 import AuthorBox from '../../components/AuthorBox';
 import PostData from '../../components/PostData';
+import CommentBox from '../../components/CommentBox';
+import PostComments from '../../components/PostComments';
 
 
-function Post({article}:IPostProps){
+function Post({article,comments}:IPostProps){
+  console.log(comments)
   return (
     <main className='min-h-[70vh] w-full flex-col flex items-center pt-8'>
       <div className='flex flex-col w-full md:w-2/4 items-center justify-start gap-4 text-center'>
@@ -25,6 +28,8 @@ function Post({article}:IPostProps){
         </div>
         <PostData htmlData={article.content.html}/>
         <AuthorBox author={article.author}/>
+        <CommentBox slug={article.slug}/>
+        <PostComments comments={comments}/>
       </div>    
     </main>
     
@@ -33,10 +38,17 @@ function Post({article}:IPostProps){
 
 export default Post
 export const getServerSideProps: GetServerSideProps = async({params}:any)=>{
-    const article:IArticle = await getPost(params.slug);    
+    const article:IArticle = await getPost(params.slug);
+    const comments:Array<ICommentResult> = await getComments(params.slug);
+    if (!article) {
+      return {
+        notFound: true
+      }
+    }   
     return {
         props:{
-          article
+          article,
+          comments
         }
     }
 }

@@ -8,7 +8,6 @@ export interface ICategoriesProps {
   }
   export interface IArticlesProps {
     articles: Array<IArticle>;
-    category:string
   }
 
 export interface IIndexPageProps {
@@ -43,4 +42,19 @@ export interface IArticle {
 }
 export interface IPostProps {
   article : IArticle;
+  comments : Array<ICommentResult>
+}
+export interface ICommentForm{
+  name:string;
+  email:string;
+  message:string;
+  postSlug:string;
+}
+export interface ICommentResult{
+  createdAt:string
+  id:string;
+  name:string;
+  email:string;
+  message:string;
+  postSlug:string;
 }
