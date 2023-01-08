@@ -1,7 +1,7 @@
 import {request, gql } from "graphql-request";
 import { ICommentForm } from "../types";
 
-const api:string = "https://api-ap-south-1.hygraph.com/v2/clacctm8100z901um1r9b2kl5/master";
+const api:string = process.env.NEXT_API_URL as string;
 
 export const getCategories = async () => {
   const query:string = gql`
@@ -17,6 +17,16 @@ export const getCategories = async () => {
   const result = await request(api, query);
   return result.categories;
 };
+export const getArticlesSlugs = async()=>{
+  const query:string= gql`query getComment {
+    articles {
+      slug
+    }
+  }`
+  const result = await request(api,query);
+  return result.articles;
+}
+
 export const getArticles = async () => {
   const query:string = gql`query RecentPost {
     articles(orderBy: createdAt_DESC) {
@@ -133,7 +143,6 @@ export const submitComment = async (commentForm:ICommentForm) => {
   
     return result.json();
   } catch (error) {
-    console.log("Error while submitting comment");
   }
 };
 

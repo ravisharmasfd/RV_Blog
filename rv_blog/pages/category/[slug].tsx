@@ -6,6 +6,7 @@ import NavBottom from '../../components/NavBottom'
 import Posts from '../../components/Posts'
 import { getArticles, getArticlesByCategories, getCategories } from '../../BackendApi'
 import { IArticle, IAuthor, ICategory, IIndexPageProps } from '../../types'
+import Head from 'next/head'
 
 interface IProps{
   categories:Array<ICategory>;
@@ -17,6 +18,7 @@ function Category({categories,articles}:IProps) {
     
     return (
         <>
+        <Head><title>{slug}</title></Head>
           <main className='min-h-[70vh]' >
           <NavBottom categories={categories}/>
            <Posts articles={articles} />

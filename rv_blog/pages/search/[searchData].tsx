@@ -4,6 +4,7 @@ import NavBottom from '../../components/NavBottom'
 import Posts from '../../components/Posts'
 import { getArticlesByCategories, getArticlesBySearch, getCategories } from '../../BackendApi'
 import { IArticle, ICategory, IIndexPageProps } from '../../types'
+import Head from 'next/head';
 
 function SearchPage({categories,articles}:IIndexPageProps) {
   const match = (articles.length == 0);
@@ -18,6 +19,9 @@ function SearchPage({categories,articles}:IIndexPageProps) {
 export default SearchPage
 
 export const getServerSideProps :GetServerSideProps = async({params}:any)=>{
+  <Head>
+  <title>Search Page</title>
+</Head>
     const categories: Array<ICategory> = await getCategories();
     const articles:Array<IArticle> = await getArticlesBySearch(params.searchData);    
     return{

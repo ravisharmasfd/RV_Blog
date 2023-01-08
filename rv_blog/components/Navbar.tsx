@@ -28,13 +28,13 @@ function Navbar() {
           <Link className="hover:text-third" href="/">
             Blog
           </Link>
-          <Link className="hover:text-third" href="/">
+          <Link target="_blank" className="hover:text-third" href="/">
             GitHub
           </Link>
-          <Link className="hover:text-third" href="/">
+          <Link target="_blank" className="hover:text-third" href="/">
             Instagram
           </Link>
-          <Link className="hover:text-third" href="/">
+          <Link target="_blank" className="hover:text-third" href="/">
             Portfolio
           </Link>
         </div>
@@ -65,13 +65,13 @@ function Navbar() {
           <Link className="hover:text-third" href="/">
             Blog
           </Link>
-          <Link className="hover:text-third" href="/">
+          <Link  target="_blank"  className="hover:text-third" href="https://github.com/ravisharmasfd">
             GitHub
           </Link>
-          <Link className="hover:text-third" href="/">
+          <Link  target="_blank" className="hover:text-third" href="https://www.instagram.com/ravisharmasfd">
             Instagram
           </Link>
-          <Link className="hover:text-third" href="/">
+          <Link  target="_blank" className="hover:text-third" href="/">
             Portfolio
           </Link>
         </div>

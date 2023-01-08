@@ -12,7 +12,6 @@ export default function Home({categories,articles}:IIndexPageProps){
         <title>RV Blog</title>
         <meta name="description" content="A tech blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="#" />
       </Head>
       <main className='min-h-[70vh]' >
         <NavBottom categories={categories}/>

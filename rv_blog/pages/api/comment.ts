@@ -36,9 +36,7 @@ export default async function comment(
       postSlug: req.body.postSlug,
     })
     res.status(200).json({msg:"Task complete"})
-  } catch (error) {
-    console.log("🚀 ~ file: comment.ts:35 ~ error", error)
-    
+  } catch (error) {    
   }
 
 

@@ -10,7 +10,8 @@ function PageFooter() {
           <b className="text-pink-500 text-2xl m-1">♥</b> by Ravi Sharma.
         </span>
         <div className="text-white flex flex-row gap-1">
-          <Link href="/" className="hover:text-third">
+          {/*Github Link */}
+          <Link href="https://github.com/ravisharmasfd" target="_blank" className="hover:text-third">
             <svg
               width="40px"
               height="40px"
@@ -26,8 +27,9 @@ function PageFooter() {
                 strokeLinejoin="round"
               />
             </svg>
+            {/*InstaGram Link */}
           </Link>
-          <Link href="/" className="hover:text-third">
+          <Link href="https://www.instagram.com/ravisharmasfd" target="_blank" className="hover:text-third">
             <svg
               width="40px"
               height="40px"
@@ -45,7 +47,8 @@ function PageFooter() {
               </g>
             </svg>
           </Link>
-          <Link href="/" className="hover:text-third">
+          {/*LinkedIn Link */}
+          <Link href="https://www.linkedin.com/in/ravisharmasfd/" target="_blank" className="hover:text-third">
             <svg
               fill="currentColor"
               width="40px"
